@@ -1,0 +1,84 @@
+class start {
+	String 학교1 ="호그와트"; String 학교2 ="보바통"; String 학교3 ="덤스트랭";
+	String 교통1 =" 행 기차를 타고 "; String 교통2 =" 행 부엉이에 매달려 "; String 교통3 ="까지 걸어서 ";
+	void 입학() {
+		System.out.println("에 입학할 수 있다!");
+		System.out.println();
+	}
+}
+class hat {
+	String 특징1 = "오래되고 먼지가 쌓인 ";
+	String 특징2="성격이 종잡을 수 없이 특이한 ";
+	String 특징3="더럽고 괴팍한 성질의 ";
+	//생성자 생략해도 만들어줬다!
+}
+class me {
+	String 기분1, 기분2, 기분3;
+	String 이름1, 이름2, 이름3, 내이름;
+	int 나이;
+	int 배정시간=19;
+	me(){
+		이름1 ="론";
+		이름2 ="헤르미온느";
+		이름3 ="해리포터";
+		기분1 ="긴장해서 토할 것 같다. ";
+		기분2 ="어디가 되든 열심히 해야지. ";
+		기분3 ="말포이만 없으면 된다. ";
+		나이 = 17;
+	}
+	me(String 내이름, int 나이){
+		this.내이름=내이름;
+		this.나이=나이;
+		기분1 ="긴장해서 토할 것 같다. ";
+		기분2 ="어디가 되든 열심히 해야지. ";
+		기분3 ="말포이만 없으면 된다. ";
+	}
+	void 소감(){
+		System.out.print("기가 막힌다!");
+	}
+}
+class dorm {
+	String 기숙사명;
+	dorm(){
+		기숙사명 = "알고보니 슬프게도 '머글'이니 처량하게 걸어서 집에 가";
+		}
+	dorm(String 기숙사명){
+		this.기숙사명 = 기숙사명;
+	}
+	void 직전(){
+		System.out.println("드디어 기숙사를 배정받는다.");
+	}
+	void 시작(){
+		System.out.println("정해진 시간이 되어서, 드디어 내 차례가 왔다.");
+	}
+}
+
+class scene{
+	public static void main(String[] args) {
+		/*선택가능-("이름",나이)*/
+		//me 주인공 = new me();
+		me 주인공 = new me("임연지",29);
+
+		start 도착 = new start();
+		hat 모자 = new hat();
+
+		/*선택가능*/
+		dorm 숙소 = new dorm(); //비우기 - 머글
+		//dorm 숙소 = new dorm("후플푸프"); //변경 가능 - 마음대로
+		
+		System.out.println("난 "+주인공.내이름+"이다.");//1~3선택
+	  System.out.print("이번 생일로 나도 "+주인공.나이+"살이 되어서,");
+		System.out.print(도착.학교1);//1~3선택
+		도착.입학();
+		System.out.print(도착.학교1+도착.교통1+"간신히 도착했다.");//1~3선택
+		System.out.println();
+		숙소.직전();
+		System.out.println(주인공.기분1);//1~3선택
+		System.out.println();
+		System.out.println("기숙사 배정은 "+모자.특징1+"모자가 해주는데, ");//1~3선택
+		숙소.시작();
+		System.out.println();
+		System.out.println("모자가, 나는! "+숙소.기숙사명+"라고 한다!");
+		주인공.소감();
+	}
+}
